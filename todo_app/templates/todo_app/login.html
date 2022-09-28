@@ -1,0 +1,20 @@
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+
+<div class="header_bar">
+    <h1>Login</h1>
+</div>
+
+
+<div class="card_body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Login" class = "button">
+    </form>
+</div>
+
+<p>You don't have an account? <a href="{% url 'register' %}">Register</a></p>
+{% endblock content %}
